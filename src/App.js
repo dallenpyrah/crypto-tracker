@@ -1,5 +1,6 @@
 import axios from 'axios'
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Col, Container, Form, Row } from 'react-bootstrap';
 import './App.css';
 import Coin from './Coin';
 
@@ -23,26 +24,17 @@ function App() {
     coin.name.toLowerCase().includes(search.toLowerCase()));
 
   return (
-    <div className="App">
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <form>
-              <input className="coin-search" onChange={handleChange} placeholder="Search" ></input>
-            </form>
-          </div>
-          <div className="col-12">
-            {filteredCoins.map(coin => {
-              return (
-                <Coin key={coin.id} name={coin.name} symbol={coin.symbol} price={coin.current_price} volume={coin.total_volume} marketCap={coin.market_cap}
-                image={coin.image} priceChange={coin.price_change_percentage_24h}/>
-              )
-            })}
-          </div>
-        </div>
-      </div>
-    </div>
+    <Container>
+      <Row>
+        <Col><Form><input className="form-control" onChange={handleChange} placeholder="Search" ></input></Form></Col>
+      </Row>
+      <Row>{filteredCoins.map(coin => {
+        return (
+          <Coin key={coin.id} name={coin.name} symbol={coin.symbol} price={coin.current_price} volume={coin.total_volume} marketcap={coin.market_cap}
+          image={coin.image} priceChange={coin.price_change_percentage_24h}/>
+        )
+      })}</Row>
+    </Container>
   );
 }
-
 export default App;
