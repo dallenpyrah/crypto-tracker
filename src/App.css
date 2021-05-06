@@ -2,6 +2,9 @@
   background-color: #1b1b1b !important;
 }
 
+* {
+    background-color: black;
+}
 .ml-5 {
   margin-left: 2rem;
 }

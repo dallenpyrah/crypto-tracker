@@ -17,16 +17,16 @@ const Coin = ({
         <div className="col-9 card m-3 p-3 back-dark rounded">
             <div className="row mt-3 back-dark text-light">
                 <div className="col-3 back-dark mb-3">
-                    <h5><img className="" alt="" src={image} width="75px" /><span className="ml-5"><b>{name}</b></span></h5>
+                    <h5 className="back-dark"><img className="back-dark" alt="" src={image} width="75px" /><span className="ml-5"><b className="back-dark">{name}</b></span></h5>
                 </div>
                 <div className="col-1 back-dark">
-                    <h5 className="back-dark mt-4"><Badge>{symbol.toUpperCase()}</Badge></h5>
+                    <h5 className="back-dark mt-4"><Badge className="back-dark">{symbol.toUpperCase()}</Badge></h5>
                 </div>
                 <div className="col-1 back-dark">
-                    <h5 className="back-dark mt-4"><Badge>${price}</Badge></h5>
+                    <h5 className="back-dark mt-4"><Badge className="back-dark">${price}</Badge></h5>
                 </div>
                 <div className="col-2 back-dark">
-                    <h5 className="back-dark mt-4"><Badge>${volume.toLocaleString()}</Badge></h5>
+                    <h5 className="back-dark mt-4"><Badge className="back-dark">${volume.toLocaleString()}</Badge></h5>
                 </div>
                 <div className="col-2 back-dark">
                     {priceChange > 0 ? (
@@ -34,7 +34,7 @@ const Coin = ({
                     ) : (<h5 className="back-dark mt-4 text-red">{priceChange.toFixed(2)}%</h5>)}
                 </div>
                 <div className="col-2 back-dark">
-                    <h5 className="back-dark mt-4"><Badge>Mk Cap ${marketcap.toLocaleString()}</Badge></h5>
+                    <h5 className="back-dark mt-4"><Badge className="back-dark">Mk Cap ${marketcap.toLocaleString()}</Badge></h5>
                 </div>
             </div>
         </div>

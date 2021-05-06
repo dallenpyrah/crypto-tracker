@@ -25,9 +25,9 @@ function App() {
     coin.name.toLowerCase().includes(search.toLowerCase()));
 
   return (
-    <Container fluid>
-      <Row className="justify-content-center mt-5">
-        <Col className="text-center"><h3><b>Search a Currrency</b></h3></Col>
+    <Container fluid className="background-black">
+      <Row className="justify-content-center">
+        <Col className="text-center text-light mt-5"><h3><b>Search a Currrency</b></h3></Col>
       </Row>
       <Row className="justify-content-center mt-3 mb-4">
         <Col className="text-center" xs={4}><Form><input className="form-control p-3 input text-light" onChange={handleChange} placeholder="Search" ></input></Form></Col>
