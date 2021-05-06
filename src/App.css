@@ -1,0 +1,29 @@
+.back-dark {
+  background-color: #1b1b1b !important;
+}
+
+.ml-5 {
+  margin-left: 2rem;
+}
+.input {
+  background-image: linear-gradient(
+    -225deg,
+    #ac32e4 0%,
+    #7918f2 48%,
+    #4801ff 100%
+  );
+
+  color: #ffffff;
+}
+
+.input::placeholder{
+    color: white!important;
+}
+
+.text-green{
+    color: rgb(51, 255, 51);
+}
+
+.text-red{
+    color: rgb(255, 57, 57);
+}
