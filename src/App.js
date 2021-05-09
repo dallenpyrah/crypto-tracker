@@ -9,11 +9,12 @@ import {
 import { Nav, Navbar } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Homepage from './pages/Homepage';
+import ActiveCoinPage from './pages/ActiveCoinPage';
 function App() {
   return (
     <Router>
         <Navbar className="ml-3" bg="" variant="dark">
-        <Navbar.Brand href="#home" className="ml-3">BIKOJO</Navbar.Brand>
+        <Navbar.Brand href="#home" className="ml-3 text-primary">BIKOJO</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link>
             <Link className="nav-link" to="/">Home</Link>
@@ -27,6 +28,7 @@ function App() {
         </Nav>
       </Navbar>
       <Switch>
+      <Route path='/coin/:id' children={<ActiveCoinPage />} exact />
         <Route path='/coins' exact>
           <Coinpage />
         </Route>

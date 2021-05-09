@@ -32,7 +32,7 @@ export default function Homepage(){
         </Row>
         <Row className="justify-content-center">{filteredCoins.map(coin => {
           return (
-            <Coin key={coin.id} name={coin.name} symbol={coin.symbol} price={coin.current_price} volume={coin.total_volume} marketcap={coin.market_cap}
+            <Coin key={coin.id} name={coin.name} id={coin.id} symbol={coin.symbol} price={coin.current_price} volume={coin.total_volume} marketcap={coin.market_cap}
             image={coin.image} priceChange={coin.price_change_percentage_24h}/>
           )
         })}</Row>

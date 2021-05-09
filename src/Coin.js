@@ -3,8 +3,12 @@ import React from 'react';
 import { Badge } from 'react-bootstrap';
 import './Coin.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { useHistory } from "react-router-dom"
+
+
 
 const Coin = ({
+    id,
   name,
   price,
   symbol,
@@ -13,8 +17,13 @@ const Coin = ({
   image,
   priceChange
 }) => {
+    const history = useHistory()
+
+    const routeChange = () => {
+    history.push(`/coin/${id}`)
+    }
   return (
-        <div className="col-9 card m-3 p-3 back-dark rounded hover">
+        <div onClick={routeChange} className="col-9 card m-3 p-3 back-dark rounded hover">
             <div className="row mt-3 back-dark text-light">
                 <div className="col-3 back-dark mb-3">
                     <h5 className="back-dark"><img className="back-dark" alt="" src={image} width="75px" /><span className="ml-5"><b className="back-dark">{name}</b></span></h5>
