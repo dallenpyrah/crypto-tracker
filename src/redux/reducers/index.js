@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux'
-import { coinsReducer } from './CoinReducer'
+import { coinsReducer, selectedCoinReducer } from './CoinReducer'
 
 const reducers = combineReducers({
-    allCoins: coinsReducer
+    allCoins: coinsReducer,
+    coin: selectedCoinReducer
 })
 
 export default reducers

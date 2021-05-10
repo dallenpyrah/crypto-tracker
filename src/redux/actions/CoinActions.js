@@ -20,3 +20,9 @@ export const setCoin = (coin) => {
         payload: coin
     }
 }
+
+export const removeSelectedCoin = () => {
+    return {
+        type: actionTypes.REMOVE_SELECTED_COIN
+    }
+}
