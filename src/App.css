@@ -33,3 +33,8 @@
 .text-red{
     color: rgb(255, 57, 57);
 }
+
+.coin-class{
+  margin-top: 25rem;
+  font-size: 100px;
+}

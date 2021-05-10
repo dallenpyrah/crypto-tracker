@@ -28,13 +28,9 @@ function App() {
         </Nav>
       </Navbar>
       <Switch>
-      <Route path='/coin/:id' children={<ActiveCoinPage />} exact />
-        <Route path='/coins' exact>
-          <Coinpage />
-        </Route>
-        <Route path='/' exact>
-          <Homepage />
-        </Route>
+      <Route path='/coin/:id' component={ActiveCoinPage} exact />
+        <Route path='/coins' component={Coinpage} exact />
+        <Route path='/' component={Homepage} exact />
       </Switch>
     </Router>
   );

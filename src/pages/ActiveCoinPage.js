@@ -2,12 +2,12 @@ import axios from 'axios';
 import React, { useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import store  from '../redux/store'
 import { useParams } from 'react-router'
 import { selectedCoin, removeSelectedCoin} from '../redux/actions/CoinActions'
+import '../App.css';
 const ActiveCoinPage = () => {
     let  { id } = useParams();
-    const coin = useSelector((state: store) => state.coin)
+    const coin = useSelector((state: RootState) => state.coin)
     const dispatch = useDispatch()
 
     const FetchCoin = async (id) => {
@@ -22,27 +22,20 @@ const ActiveCoinPage = () => {
     }
 
     useEffect(() => {
-        if (id && id !== "") FetchCoin(id);
-        return () => {
-          dispatch(removeSelectedCoin());
-        };
+        if (id !== ""){
+            return () => {
+                dispatch(removeSelectedCoin());
+              };
+             } 
+        FetchCoin(id);
       }, []);
     
     return (
         <Container fluid>
             <Row className="justify-content-center">
-                <Col sm={3}>
-                    <div className="card bg-dark text-center">
-                        <h3 className="bg-dark text-light mt-2">{coin.name}</h3>
-                        <div className="card bg-secondary text-left">
-                            <h6 className="bg-secondary text-light mt-2">Market Cap Rank: {coin.market_cap_rank}</h6>
-                        </div>
-                    </div>
-                </Col>
-                <Col sm={6}>
-                    <div className="card bg-dark text-center">
-                        <h3 className="bg-dark text-light mt-2">News</h3>
-                    </div>
+                <Col className="" sm={3}>
+                    <h3 className="text-light text-center coin-class">{coin.name}</h3>
+                    <h3 className="text-light">{coin.market_data.current_price.usd}</h3>
                 </Col>
             </Row>
         </Container>
