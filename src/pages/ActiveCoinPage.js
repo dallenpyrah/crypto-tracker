@@ -2,13 +2,13 @@ import axios from 'axios';
 import React, { useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+import store  from '../redux/store'
 import { useParams } from 'react-router'
 import { selectedCoin, removeSelectedCoin} from '../redux/actions/CoinActions'
 const ActiveCoinPage = () => {
-    // @ts-ignore
     let  { id } = useParams();
-    const coin = useSelector((state) => state.coin)
-    const dispatch = useDispatch();
+    const coin = useSelector((state: store) => state.coin)
+    const dispatch = useDispatch()
 
     const FetchCoin = async (id) => {
         try {
@@ -35,7 +35,7 @@ const ActiveCoinPage = () => {
                     <div className="card bg-dark text-center">
                         <h3 className="bg-dark text-light mt-2">{coin.name}</h3>
                         <div className="card bg-secondary text-left">
-                            <h6></h6>
+                            <h6 className="bg-secondary text-light mt-2">Market Cap Rank: {coin.market_cap_rank}</h6>
                         </div>
                     </div>
                 </Col>
