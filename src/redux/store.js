@@ -4,7 +4,6 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 const store = createStore(
     reducers,
-    {},
     composeWithDevTools()
   );
   

@@ -1,11 +1,10 @@
 import { actionTypes } from "../constants/ActionTypes"
 
 const initialState = {
-    coins: [],
     coin: {}
 }
 
-export const coinReducer = (state = initialState,{ type, payload }) => {
+export const coinReducer = (state = {},{ type, payload }) => {
     switch(type){
         case actionTypes.SET_COIN:
             return { ...state, coin: payload }
@@ -14,7 +13,7 @@ export const coinReducer = (state = initialState,{ type, payload }) => {
     }
 }
 
-export const coinsReducer = (state = initialState, { type, payload }) => {
+export const coinsReducer = (state = {}, { type, payload }) => {
     switch (type){
         case actionTypes.SET_COINS:
             return { ...state, coins: payload };
@@ -23,7 +22,7 @@ export const coinsReducer = (state = initialState, { type, payload }) => {
     }
 }
 
-export const selectedCoinReducer = (state = initialState, { type, payload }) => {
+export const selectedCoinReducer = (state = initialState.coin, { type, payload }) => {
     switch(type){
         case actionTypes.SELECTED_COIN:
             return { ...state, ...payload};
