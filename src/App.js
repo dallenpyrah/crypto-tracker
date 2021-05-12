@@ -10,6 +10,7 @@ import { Nav, Navbar } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Homepage from './pages/Homepage';
 import ActiveCoinPage from './pages/ActiveCoinPage';
+import CoinDetailsPage from './pages/CoinDetailsPage'
 function App() {
   return (
     <Router>
@@ -28,7 +29,7 @@ function App() {
         </Nav>
       </Navbar>
       <Switch>
-      <Route path='/coin/:id' component={ActiveCoinPage} exact />
+      <Route path='/coin/:id' component={CoinDetailsPage} exact />
         <Route path='/coins' component={Coinpage} exact />
         <Route path='/' component={Homepage} exact />
       </Switch>
